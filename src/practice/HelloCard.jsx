@@ -1,4 +1,6 @@
-function HelloCard({ name = "React Learner", city = "Shanghai" }) {
+// function HelloCard({ name="张三", city="北京" }) {
+function HelloCard(props) {
+  const { name, city } = props;
   return (
     <div className="demo-card">
       <h3>HelloCard (函数组件)</h3>

@@ -6,7 +6,12 @@ class CounterClass extends React.Component {
   };
 
   add = () => {
-    this.setState((prev) => ({ count: prev.count + 1 }));
+    this.setState((prev) => {
+      console.log("log ~ CounterClass ~ prev:", prev)
+      return {
+        count: prev.count + 1 
+      }
+    })
   };
 
   minus = () => {
