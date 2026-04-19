@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 
 class ToggleClass extends React.Component {
   state = {
@@ -23,6 +23,37 @@ class ToggleClass extends React.Component {
 
 function ToggleFun() {
   const [isOn, setIsOn]  = useState(true);
+  // console.log('ToggleFun渲染了');
+  
+  // setTimeout(() => {
+  //   setIsOn(false)
+  // }, 0)
+  // useEffect(() => {
+  //   setIsOn(false)
+  // }, [])
+  // useEffect的依赖使用规则
+
+  //1.每次 render 都执行（包括 state 更新）
+  useEffect(() => {
+    console.log('每次渲染都会执行') //每次 render 都执行（包括 state 更新）
+    return () => console.log('先执行清理')
+  })
+
+  // 2.只在 首次渲染（mount）执行一次
+  // 但注意：React 18 + StrictMode 开发环境执行 2 次
+  // useEffect(() => {
+  //   console.log('只执行一次')
+  // }, [])
+
+
+  // 3.首次执行一次
+  // 之后 依赖变化才执行
+  // useEffect(() => {
+  //   console.log(isOn)
+  // }, [isOn])
+
+
+
 
   const handleToggle = () => {
     // setIsOn(!isOn);
@@ -53,4 +84,4 @@ function ToggleFun() {
   );
 }
 
-export default ToggleClass;
+export default ToggleFun;

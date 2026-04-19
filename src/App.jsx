@@ -6,6 +6,7 @@ import {
   CounterFunction,
   HelloCard,
   ToggleClass,
+  TestA
 } from "./practice";
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <ToggleClass />
         <CounterClass />
         <ClockClass />
+        <TestA/>
       </div>
     </div>
   );

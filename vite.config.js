@@ -15,5 +15,15 @@ export default defineConfig(({ mode }) => {
     define: {
       'process.env': processEnv,
     },
+    server: {
+      open: true,
+      host: true,
+      hmr: true,
+      watch: {
+        usePolling: true,
+        interval: 100,
+      },
+    }
+
   };
 });
